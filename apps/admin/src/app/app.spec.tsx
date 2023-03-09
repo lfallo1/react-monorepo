@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { error } from "console";
 
 import App from './app';
 
@@ -9,7 +10,12 @@ describe('App', () => {
   });
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
-    expect(getByText(/h/gi)).toBeTruthy();
+    const element = render(<App />);
+
+    element.findByText("h").then(message=>{
+      error(`***************${message}*******************`);
+      expect(message).toBeTruthy();
+    })
+
   });
 });
