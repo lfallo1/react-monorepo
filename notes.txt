@@ -4,6 +4,9 @@ npx nx test store
 npx nx run-many --target=serve --projects=admin,store
 npx nx serve store --configuration=development
 nx serve store --configuration=production
+npx nx run-many --target=serve --projects=admin,store --configuration=development
+npx nx graph
+nx view-logs
 
 [misc]
 build configs are defined in project.json
