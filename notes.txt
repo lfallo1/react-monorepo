@@ -1,0 +1,9 @@
+[commands]
+npx nx build store
+npx nx test store
+npx nx run-many --target=serve --projects=admin,store
+npx nx serve store --configuration=development
+nx serve store --configuration=production
+
+[misc]
+build configs are defined in project.json
